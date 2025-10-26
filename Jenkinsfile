@@ -8,7 +8,8 @@ pipeline {
     }
 
     options {
-        timeout(time: 10, unit: 'SECONDS')
+        timeout(time: 30, unit: 'MINUTES')
+        disableConcurrentBuilds() //It is used to disable the parallel Builds of the job
     }
     
     //Build
@@ -18,7 +19,6 @@ pipeline {
                 script{
                     sh """
                         echo 'Helo Bulid'
-                        sleep 10
                         env
                     """
                 }
