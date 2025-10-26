@@ -6,6 +6,10 @@ pipeline {
     environment {
         COURSE = 'Jenkins'
     }
+
+    options {
+        timeout(time: 10, unit: 'SECONDS')
+    }
     
     //Build
     stages {
@@ -14,6 +18,7 @@ pipeline {
                 script{
                     sh """
                         echo 'Helo Bulid'
+                        sleep 10
                         env
                     """
                 }
